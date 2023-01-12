@@ -14,7 +14,7 @@ function App() {
   };
 
   const inputHandler = (e) => {
-    const reg = /[0-9]+\.{0}/;
+    const reg = /^[\.0-9]*$/;
     if (reg.test(e.target.value) || e.target.value === "") {
       setData((prev) => ({ ...prev, inputValue: e.target.value }));
     }
@@ -32,7 +32,7 @@ function App() {
       stepHandler={stepHandler}
       dateHandler={dateHandler}
     />,
-    <Income stepHandler={stepHandler} date={data.date} val={data.inputValue} setData={setData} />,
+    <Income stepHandler={stepHandler} date={data.date} val={data.inputValue} setData={setData} />
   ]);
 
   return (
@@ -41,21 +41,17 @@ function App() {
         <h4
           className={`my-3 mr-3 relative before:content-[''] before:w-full before:absolute before:h-1 ${
             step === 0 ? "before:bg-green" : "before:bg-gray"
-          } before:left-0 before:-bottom-1 before:rounded-md max-sm:text-lg inline-block`}
-        >
+          } before:left-0 before:-bottom-1 before:rounded-md max-sm:text-lg inline-block`}>
           Income Details
         </h4>
         <h4
           className={`my-3 mr-3 relative before:content-[''] before:w-full before:absolute before:h-1 ${
             step === 1 ? "before:bg-green" : "before:bg-gray"
-          } before:left-0 before:-bottom-1 before:rounded-md max-sm:text-lg inline-block`}
-        >
+          } before:left-0 before:-bottom-1 before:rounded-md max-sm:text-lg inline-block`}>
           Income
         </h4>
       </div>
-      <div className="card">
-        {currentStep}
-      </div>
+      <div className="card">{currentStep}</div>
     </main>
   );
 }
