@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1, h2, h3, h4, h5, p, span, a {
+    @apply text-white font-spaceGrotesk;
+}
+
+h1 {
+    @apply text-6xl max-sm:text-4xl;
+}
+
+h2 {
+    @apply text-5xl;
+}
+
+h3 {
+    @apply text-4xl max-sm:text-2xl
+}
+
+h4 {
+    @apply text-3xl
+}
+
+h5 {
+    @apply text-2xl
+}
+
+input {
+    @apply p-2 rounded-md bg-gray text-white
+}
+
+button {
+    @apply border-gray border-2 rounded-lg font-spaceGrotesk font-bold
+}
+
+button, label {
+    @apply p-3 text-white
+}
+
+label, input, select {
+    @apply focus:outline-none
+}
+
+button{
+    @apply focus:outline-dotted focus:outline-offset-1 focus:outline-green
+}
+
+.radio:checked + label {
+    @apply bg-green
+}
+
+.radio + label {
+    @apply text-xl
+}
+
+label {
+    @apply inline-block text-3xl
+}
+
+.tab {
+    @apply hidden
+}
+
+.card {
+    @apply bg-cardBg p-5 rounded-md max-sm:mx-3 lg:mx-auto lg:max-w-screen-lg sm:mx-3 max-sm:p-2
+}
+
+.wrap {
+    @apply max-w-screen-lg mx-auto
+}
